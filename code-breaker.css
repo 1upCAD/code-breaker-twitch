@@ -42,7 +42,7 @@ body,
 	transition: all 1s;
 }
 .outer_container {
-	background: #000000 url('code-breaker-main-board-01.jpg') no-repeat top left;
+	background: #000000 var(--step1-bg) no-repeat top left;
 	display: block;
 	position: relative;
 	width: 100%;
@@ -51,13 +51,13 @@ body,
 	margin: 0px 0px 0px 0px;
 	transition: all 0.5s;
 }
-.outer_container.step1 { background-image: url('code-breaker-main-board-01.jpg'); }
-.outer_container.step2 { background-image: url('code-breaker-main-board-02.jpg'); }
-.outer_container.step3 { background-image: url('code-breaker-main-board-03.jpg'); }
-.outer_container.step4 { background-image: url('code-breaker-main-board-04.jpg'); }
-.outer_container.step5 { background-image: url('code-breaker-main-board-05.jpg'); }
-.outer_container.step6 { background-image: url('code-breaker-main-board-06.jpg'); }
-.outer_container.step7 { background-image: url('code-breaker-main-board-07.jpg'); }
+.outer_container.step1 { background-image: var(--step1-bg); }
+.outer_container.step2 { background-image: var(--step2-bg); }
+.outer_container.step3 { background-image: var(--step3-bg); }
+.outer_container.step4 { background-image: var(--step4-bg); }
+.outer_container.step5 { background-image: var(--step5-bg); }
+.outer_container.step6 { background-image: var(--step6-bg); }
+.outer_container.step7 { background-image: var(--step7-bg); }
 
 .profile_image {
 	background: #ffffff no-repeat center center;

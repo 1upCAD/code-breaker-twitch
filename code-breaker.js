@@ -84,24 +84,40 @@ function connectws(ws) {
 // UPDATE BOARD //
 //////////////////
 
+let cb_assets_host = "https://raw.githubusercontent.com/1upCAD/code-breaker-twitch/main/";
+
+window.addEventListener('load', function(event) {
+  document.getElementById('cb-css').href = cb_assets_host + "code-breaker.css";
+  document.getElementById('cb-js').src = cb_assets_host + "code-breaker.js";
+});
+
+// set css properties for backgrounds
+document.documentElement.style.setProperty('--step1-bg', "url('" + cb_assets_host + "code-breaker-main-board-01.jpg')");
+document.documentElement.style.setProperty('--step2-bg', "url('" + cb_assets_host + "code-breaker-main-board-02.jpg')");
+document.documentElement.style.setProperty('--step3-bg', "url('" + cb_assets_host + "code-breaker-main-board-03.jpg')");
+document.documentElement.style.setProperty('--step4-bg', "url('" + cb_assets_host + "code-breaker-main-board-04.jpg')");
+document.documentElement.style.setProperty('--step5-bg', "url('" + cb_assets_host + "code-breaker-main-board-05.jpg')");
+document.documentElement.style.setProperty('--step6-bg', "url('" + cb_assets_host + "code-breaker-main-board-06.jpg')");
+document.documentElement.style.setProperty('--step7-bg', "url('" + cb_assets_host + "code-breaker-main-board-07.jpg')");
+
 function startGame() {
   addDivs();
   if (sbDebugMode) {
     //document.getElementById('debug').innerHTML = "Game Started";
   }
-  preloadImage('code-breaker-main-board-01.jpg');
-  preloadImage('code-breaker-main-board-02.jpg');
-  preloadImage('code-breaker-main-board-03.jpg');
-  preloadImage('code-breaker-main-board-04.jpg');
-  preloadImage('code-breaker-main-board-05.jpg');
-  preloadImage('code-breaker-main-board-06.jpg');
-  preloadImage('code-breaker-main-board-07.jpg');
-  preloadImage('blue.png');
-  preloadImage('red.png');
-  preloadImage('green.png');
-  preloadImage('yellow.png');
-  preloadImage('pink.png');
-  preloadImage('white.png');
+  preloadImage(cb_assets_host + 'code-breaker-main-board-01.jpg');
+  preloadImage(cb_assets_host + 'code-breaker-main-board-02.jpg');
+  preloadImage(cb_assets_host + 'code-breaker-main-board-03.jpg');
+  preloadImage(cb_assets_host + 'code-breaker-main-board-04.jpg');
+  preloadImage(cb_assets_host + 'code-breaker-main-board-05.jpg');
+  preloadImage(cb_assets_host + 'code-breaker-main-board-06.jpg');
+  preloadImage(cb_assets_host + 'code-breaker-main-board-07.jpg');
+  preloadImage(cb_assets_host + 'blue.png');
+  preloadImage(cb_assets_host + 'red.png');
+  preloadImage(cb_assets_host + 'green.png');
+  preloadImage(cb_assets_host + 'yellow.png');
+  preloadImage(cb_assets_host + 'pink.png');
+  preloadImage(cb_assets_host + 'white.png');
   var steps = [1,1,1,2,3,4,5,5,6,6,6,7];
   for (var i = 0; i <= steps.length; i++) {
     delay = (500 * (i+1));
@@ -112,6 +128,18 @@ function startGame() {
 function preloadImage(url) {
   var img=new Image();
   img.src=url;
+}
+
+function gamePiece(option) {
+  if (option == "b") { return cb_assets_host + "blue.png"; }
+  if (option == "r") { return cb_assets_host + "red.png"; }
+  if (option == "g") { return cb_assets_host + "green.png"; }
+  if (option == "y") { return cb_assets_host + "yellow.png"; }
+  if (option == "p") { return cb_assets_host + "pink.png"; }
+  if (option == "w") { return cb_assets_host + "white.png"; }
+  if (option == "hit") { return cb_assets_host + "red-hit.png"; }
+  if (option == "blow") { return cb_assets_host + "white-blow.png"; }
+  return "";
 }
 
 function setBoard(delay, step, count) {
@@ -275,18 +303,6 @@ function updateBoard(data) {
   if ((fileData['guess8'] != "") && (fileData['guess8']['guess'] != answer)) {
     gameOver();
   }
-}
-
-function gamePiece(option) {
-  if (option == "b") { return "blue.png"; }
-  if (option == "r") { return "red.png"; }
-  if (option == "g") { return "green.png"; }
-  if (option == "y") { return "yellow.png"; }
-  if (option == "p") { return "pink.png"; }
-  if (option == "w") { return "white.png"; }
-  if (option == "hit") { return "red-hit.png"; }
-  if (option == "blow") { return "white-blow.png"; }
-  return "";
 }
 
 function victory() {
