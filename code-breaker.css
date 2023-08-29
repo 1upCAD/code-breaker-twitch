@@ -1,0 +1,187 @@
+html, body, .end_screen {
+	margin: 0px;
+	padding: 0px;
+}
+html,
+body,
+.win_screen,
+.gameover_screen {
+	width: 1920px;
+	height: 1080px;
+}
+.win_screen,
+.win_screen .winner,
+.win_screen .targetUser,
+.win_screen .targetUserProfileImageUrl,
+.gameover_screen,
+.gameover_screen .gameover {
+	width: 1920px;
+}
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: "Open Sans Regular";
+	font-weight: normal;
+	font-size: 18px;
+	letter-spacing: 0px;
+	transition: all 1s;
+}
+#debug {
+	background: #ffe599;
+	display: none;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	width: auto;
+	max-height: calc(100vh - 80px);
+	padding: 20px;
+	border: 1px solid #ccc;
+	font-size: 14px;
+	white-space: nowrap;
+	z-index: 999;
+	transition: all 1s;
+}
+.outer_container {
+	background: #000000 url('code-breaker-main-board-01.jpg') no-repeat top left;
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+	margin: 0px 0px 0px 0px;
+	transition: all 0.5s;
+}
+.outer_container.step1 { background-image: url('code-breaker-main-board-01.jpg'); }
+.outer_container.step2 { background-image: url('code-breaker-main-board-02.jpg'); }
+.outer_container.step3 { background-image: url('code-breaker-main-board-03.jpg'); }
+.outer_container.step4 { background-image: url('code-breaker-main-board-04.jpg'); }
+.outer_container.step5 { background-image: url('code-breaker-main-board-05.jpg'); }
+.outer_container.step6 { background-image: url('code-breaker-main-board-06.jpg'); }
+.outer_container.step7 { background-image: url('code-breaker-main-board-07.jpg'); }
+
+.profile_image {
+	background: #ffffff no-repeat center center;
+	background-size: cover;
+	display: block;
+	position: absolute;
+	top: 115px;
+	left: 197px;
+	width: 80px;
+	height: 80px;
+	z-index: 99;
+	border-radius: 80px;
+	box-shadow: 0px 0px 5px 2px #282a2d;
+	border: 5px solid #5F7677;
+	margin-top: -5px;
+	margin-left: -5px;
+	opacity: 0;
+	transition: all 0.5s;
+}
+.profile_image.guess2 { left: 380px; }
+.profile_image.guess3 { left: 563px; }
+.profile_image.guess4 { left: 743px; }
+.profile_image.guess5 { left: 926px; }
+.profile_image.guess6 { left: 1109px; }
+.profile_image.guess7 { left: 1291px; }
+.profile_image.guess8 { left: 1473px; }
+
+.result {
+	background: no-repeat center center;
+	background-size: cover;
+	display: block;
+	position: absolute;
+	top: 213px;
+	left: 187px;
+	width: 46px;
+	height: 46px;
+	z-index: 99;
+	opacity: 0;
+	transition: all 0.5s;
+}
+.result.result2 { margin-left: 55px; }
+.result.result3 { margin-top: 55px; }
+.result.result4 { margin-top: 55px; margin-left: 55px; }
+
+.result.guess2 { left: 370px; }
+.result.guess3 { left: 553px; }
+.result.guess4 { left: 733px; }
+.result.guess5 { left: 916px; }
+.result.guess6 { left: 1099px; }
+.result.guess7 { left: 1281px; }
+.result.guess8 { left: 1463px; }
+
+
+.color {
+	background: no-repeat center center;
+	background-size: cover;
+	display: block;
+	position: absolute;
+	top: 385px;
+	left: 197px;
+	width: 80px;
+	height: 80px;
+	z-index: 99;
+	opacity: 0;
+	transition: all 0.5s;
+}
+.color.color1 { top: 385px; }
+.color.color2 { top: 510px; }
+.color.color3 { top: 635px; }
+.color.color4 { top: 760px; }
+
+.color.guess1 { left: 197px; }
+.color.guess2 { left: 380px; }
+.color.guess3 { left: 563px; }
+.color.guess4 { left: 743px; }
+.color.guess5 { left: 926px; }
+.color.guess6 { left: 1109px; }
+.color.guess7 { left: 1291px; }
+.color.guess8 { left: 1473px; }
+
+.color.answer { left: 1680px; }
+.color.answer.color1 { top: 388px; }
+.color.answer.color2 { top: 515px; }
+.color.answer.color3 { top: 643px; }
+.color.answer.color4 { top: 771px; }
+
+.win_screen,
+.gameover_screen {
+	background: #00000080;
+	display: table;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	transition: all 0.5s;
+	opacity: 0;
+	z-index: 100;
+	backdrop-filter: blur(10px);
+}
+.win_screen .win_screen_container,
+.gameover_screen .gameover_screen_container {
+	display: table-cell;
+	position: relative;
+	width: 100%;
+	margin: auto;
+	padding: 0px;
+	vertical-align: middle;
+}
+.win_screen .winner,
+.win_screen .targetUser,
+.gameover_screen .gameover {
+	display: block;
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	font-family: "Open Sans ExtraBold";
+	font-size: 100px;
+	color: #ffffff;
+}
+.win_screen .targetUserProfileImageUrl {
+	background: no-repeat center center;
+	display: block;
+	position: relative;
+	height: 300px;
+	margin: 0px;
+	padding: 0px;
+}
