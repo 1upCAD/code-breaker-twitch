@@ -4,11 +4,14 @@ html, body, .end_screen {
 }
 html,
 body,
+.start_screen,
 .win_screen,
 .gameover_screen {
 	width: 1920px;
 	height: 1080px;
 }
+.start_screen,
+.start_screen .start,
 .win_screen,
 .win_screen .winner,
 .win_screen .targetUser,
@@ -144,6 +147,7 @@ body,
 .color.answer.color3 { top: 643px; }
 .color.answer.color4 { top: 771px; }
 
+.start_screen,
 .win_screen,
 .gameover_screen {
 	background: #00000080;
@@ -156,6 +160,7 @@ body,
 	z-index: 100;
 	backdrop-filter: blur(10px);
 }
+.start_screen .start_screen_container,
 .win_screen .win_screen_container,
 .gameover_screen .gameover_screen_container {
 	display: table-cell;
@@ -165,6 +170,7 @@ body,
 	padding: 0px;
 	vertical-align: middle;
 }
+.start_screen .start,
 .win_screen .winner,
 .win_screen .targetUser,
 .gameover_screen .gameover {
