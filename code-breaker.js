@@ -100,7 +100,6 @@ window.addEventListener('load', function(event) {
   if (params.get("color1")) { color1 = params.get("color1") }
   if (params.get("color2")) { color2 = params.get("color2") }
   document.body.style.backgroundImage = "linear-gradient(to bottom, "+ color1 +", "+ color2 +")";
-        document.getElementById('outer_container').style.display = 'none';
 });
 
 function startGame() {
