@@ -99,7 +99,7 @@ window.addEventListener('load', function(event) {
   color2 = "111111";
   if (url.searchParams.get("color1")) { color1 = url.searchParams.get("color1"); }
   if (url.searchParams.get("color2")) { color2 = url.searchParams.get("color2"); }
-  document.body.setAttribute('style', 'background-images: linear-gradient(to bottom, #'+ color1 +', #'+ color2 +')');
+  document.body.setAttribute('style', 'background-images: linear-gradient(to bottom, #'+ color1 +', #'+ color2 +') !important');
 });
 
 function startGame() {
