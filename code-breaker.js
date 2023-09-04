@@ -95,10 +95,10 @@ document.documentElement.style.setProperty('--step7-bg', "url('data:image/jpeg;b
 
 window.addEventListener('load', function(event) {
   const params = new URLSearchParams(window.location.search);
-  color1 = "#990000FF";
-  color2 = "#000000FF";
-  if (params.get("color1")) { color1 = params.get("color1") }
-  if (params.get("color2")) { color2 = params.get("color2") }
+  color1 = "#b89520";
+  color2 = "#0d501d";
+  if (params.get("color1")) { color1 = params.get("color1").replace("%23", "#") }
+  if (params.get("color2")) { color2 = params.get("color2").replace("%23", "#") }
   document.body.style.backgroundImage = "linear-gradient(to bottom, "+ color1 +", "+ color2 +")";
 });
 
