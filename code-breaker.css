@@ -4,6 +4,8 @@ html, body, .end_screen {
 }
 body {
 	background: #000000;
+	transition: all 1s;
+	opacity: 0;
 }
 html,
 body,
