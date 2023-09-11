@@ -2,10 +2,14 @@ html, body, .end_screen {
 	margin: 0px;
 	padding: 0px;
 }
+html {
+	background: transparent !important;
+	transition: all 1s;
+	opacity: 0;
+}
 body {
 	background: #000000;
 	transition: all 1s;
-	opacity: 0;
 }
 html,
 body,
